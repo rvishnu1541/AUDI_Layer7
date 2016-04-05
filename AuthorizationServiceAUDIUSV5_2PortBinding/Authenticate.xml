@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="Authenticate" name="Authenticate" bindingOperationName="Authenticate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="08669303-3159-4a2f-ac97-4f0c6664b056" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="20fa9885-e867-4f00-a7b5-ea6fbd99bbb1fileName">Authenticate</con:setting><con:setting id="08669303-3159-4a2f-ac97-4f0c6664b056fileName">Authenticate</con:setting></con:settings><con:call name="Request 1" id="c9cc9484-769e-4146-8236-ef078d67d876" defaultOutgoingWss="" defaultIncomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://Domain/SOAP/AUDIUS_AuthorizationServiceV5_2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://xmlns.vzt.com/APIGateway/AUDIUS_AuthorizationServiceV5_2">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:Authenticate>
+         <AuthenticateRequestType>
+            <Data>
+               <SourceName>?</SourceName>
+               <ExternalUserName>?</ExternalUserName>
+               <ExternalUserID>?</ExternalUserID>
+               <Email>?</Email>
+               <TraceID>?</TraceID>
+               <TraceTimestamp>?</TraceTimestamp>
+            </Data>
+         </AuthenticateRequestType>
+      </aud:Authenticate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Authenticate"/><con:wsrmConfig version="1.2"/></con:call><con:environmentSpec><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:operation>

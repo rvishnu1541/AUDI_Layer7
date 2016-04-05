@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValidateAddress TestCase" searchProperties="true" id="e4ea409d-2aff-4d95-a676-de4577279d6b" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="1d1b20b9-906c-41c7-86cc-43a4dab9f2a3fileName">ValidateAddress-TestCase</con:setting><con:setting id="e4ea409d-2aff-4d95-a676-de4577279d6bfileName">ValidateAddress-TestCase</con:setting></con:settings><con:testStep type="request" name="ValidateAddress" id="941e72dc-ef3c-43b6-8da2-c6b801f0a2e8"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AddressServiceV5_0SoapBinding</con:interface><con:operation>ValidateAddress</con:operation><con:request name="ValidateAddress" id="14035dbd-3cde-44ad-b4b6-e89ef6ded192" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/AddressServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:add="http://ns.hughestelematics.com/Gateway/service/AddressService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+  ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <add:ValidateAddress>
+         <!--Optional:-->
+         <ValidateAddressRequest>
+            <v1:context>
+              <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>Vis367537533</v11:TransactionId>
+               <v11:Timestamp>2015-02-25T13:03:35.432Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:Address>
+                  <v1:Address1>2001 summit blvd</v1:Address1>
+                  <!--Optional:-->
+                  <v1:Address2></v1:Address2>
+                  <!--Optional:-->
+                  <v1:District></v1:District>
+                  <v1:City>Atlanta</v1:City>
+                  <v1:StateProvince>GA</v1:StateProvince>
+                  <!--Optional:-->
+                  <v1:Country>USA</v1:Country>
+                  <!--Optional:-->
+                  <v1:County>cobb</v1:County>
+                  <!--Optional:-->
+                  <v1:ZipCode>30319</v1:ZipCode>
+                  <!--Optional:-->
+                  <v1:AddressType></v1:AddressType>
+                  <!--Optional:-->
+                  <v1:PrimaryAddressFlag></v1:PrimaryAddressFlag>
+                  <!--Optional:-->
+                  <v1:Longitude></v1:Longitude>
+                  <!--Optional:-->
+                  <v1:Latitude></v1:Latitude>
+               </v1:Address>
+            </v1:Data>
+         </ValidateAddressRequest>
+      </add:ValidateAddress>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="SearchAddress" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

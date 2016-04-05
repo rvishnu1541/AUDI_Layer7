@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SearchAddress TestCase" searchProperties="true" id="bcd72036-67a1-417b-8949-fe528a94b0b8" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ca4b8b69-06b5-4537-b623-309d7f3009dafileName">SearchAddress-TestCase</con:setting><con:setting id="bcd72036-67a1-417b-8949-fe528a94b0b8fileName">SearchAddress-TestCase</con:setting></con:settings><con:testStep type="request" name="SearchAddress" id="c20b29bc-7a53-455f-9f7e-1984b7272712"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AddressServiceV5_0SoapBinding</con:interface><con:operation>SearchAddress</con:operation><con:request name="SearchAddress" id="e367adb4-b644-4d33-aa1b-8c3670eef228" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/AddressServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:add="http://ns.hughestelematics.com/Gateway/service/AddressService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+ ${#Project#SessionToken}
+   </soapenv:Header>
+      <soapenv:Body>
+      <add:SearchAddress>
+         <!--Optional:-->
+         <SearchAddressRequest>
+            <v1:context>
+               <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>anjiTest1235</v11:TransactionId>
+               <v11:Timestamp>2015-02-25T13:03:35.432Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--Optional:-->
+               <v1:SearchAddressParameter>2002 Summit Blvd,Atlanga</v1:SearchAddressParameter>
+               <!--Optional:-->
+               <v1:AccountNumber>${#Project#AccountId}</v1:AccountNumber>
+               <!--Optional:-->
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <!--Optional:-->
+               <v1:MDN>?</v1:MDN>
+               <!--Optional:-->
+               <v1:TCUID>${#Project#TCUID}</v1:TCUID>
+            </v1:Data>
+         </SearchAddressRequest>
+      </add:SearchAddress>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="SearchAddress" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

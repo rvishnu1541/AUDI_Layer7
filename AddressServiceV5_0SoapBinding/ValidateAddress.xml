@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="ValidateAddress" name="ValidateAddress" bindingOperationName="ValidateAddress" type="Request-Response" outputName="ValidateAddressResponse" inputName="ValidateAddress" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="51d5f011-0927-491e-9409-e9b0aa3ec6c4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="83a2c997-6171-4fd0-be4a-378d9e7dc89efileName">ValidateAddress</con:setting><con:setting id="51d5f011-0927-491e-9409-e9b0aa3ec6c4fileName">ValidateAddress</con:setting></con:settings><con:call name="Request 1" id="4a712e49-3c0e-47a5-ac27-7f2072a6a152" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://Domain/SOAP/AddressServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:add="http://ns.hughestelematics.com/Gateway/service/AddressService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <add:ValidateAddress>
+         <!--Optional:-->
+         <ValidateAddressRequest>
+            <v1:context>
+               <v11:SourceName>?</v11:SourceName>
+               <v11:TransactionId>?</v11:TransactionId>
+               <v11:Timestamp>?</v11:Timestamp>
+               <v11:Organization>?</v11:Organization>
+               <v11:Region>?</v11:Region>
+               <v11:ApplicationName>?</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <v1:Address>
+                  <v1:Address1>?</v1:Address1>
+                  <!--Optional:-->
+                  <v1:Address2>?</v1:Address2>
+                  <!--Optional:-->
+                  <v1:District>?</v1:District>
+                  <v1:City>?</v1:City>
+                  <v1:StateProvince>?</v1:StateProvince>
+                  <!--Optional:-->
+                  <v1:Country>?</v1:Country>
+                  <!--Optional:-->
+                  <v1:County>?</v1:County>
+                  <!--Optional:-->
+                  <v1:ZipCode>?</v1:ZipCode>
+                  <!--Optional:-->
+                  <v1:AddressType>?</v1:AddressType>
+                  <!--Optional:-->
+                  <v1:PrimaryAddressFlag>?</v1:PrimaryAddressFlag>
+                  <!--Optional:-->
+                  <v1:Longitude>?</v1:Longitude>
+                  <!--Optional:-->
+                  <v1:Latitude>?</v1:Latitude>
+               </v1:Address>
+            </v1:Data>
+         </ValidateAddressRequest>
+      </add:ValidateAddress>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="SearchAddress"/><con:wsrmConfig version="1.2"/></con:call><con:environmentSpec><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:operation>

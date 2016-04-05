@@ -1,0 +1,13 @@
+<con:reportTemplate xmlns:con="http://eviware.com/soapui/config">
+  <con:name>AUDI_Layer7_POC</con:name>
+  <con:reportType>PROJECT</con:reportType>
+  <con:reportLevel>MAINREPORT</con:reportLevel>
+  <con:data xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:subreports>FailedTestStepsReport-AUDI_Layer7_POC</con:subreports>
+  <con:subreports>MetricsReport-AUDI_Layer7_POC</con:subreports>
+  <con:subreports>ProjectCoverageChart-AUDI_Layer7_POC</con:subreports>
+  <con:subreports>ProjectTestSuiteResultsOverviewReport-AUDI_Layer7_POC</con:subreports>
+  <con:subreports>ProjectTestSuiteResultsReport-AUDI_Layer7_POC</con:subreports>
+  <con:subreports>TestStepResultsReport-AUDI_Layer7_POC</con:subreports>
+  <con:scope>PROJECT</con:scope>
+</con:reportTemplate>

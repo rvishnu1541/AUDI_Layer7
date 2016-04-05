@@ -1,0 +1,11 @@
+<con:reportTemplate xmlns:con="http://eviware.com/soapui/config">
+  <con:name>ProjectTestSuiteResultsOverviewReport-AUDI_Layer7_POC</con:name>
+  <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:reportType>PROJECT</con:reportType>
+  <con:reportLevel>SUBREPORT</con:reportLevel>
+  <con:nameInReport>ProjectTestSuiteResultsOverviewReport</con:nameInReport>
+  <con:data xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:description>NO DESC</con:description>
+  <con:scope>PROJECT</con:scope>
+  <con:dataSource>ProjectTestSuiteResults</con:dataSource>
+</con:reportTemplate>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AuthorizationServiceAUDIUSV5_2PortBinding" type="wsdl" bindingName="{http://xmlns.vzt.com/APIGateway/AUDIUS_AuthorizationServiceV5_2}AuthorizationServiceAUDIUSV5_2PortBinding" soapVersion="1_1" anonymous="optional" definition="../AUDI US_API Gateway_15.05/WSDL/AUDIUS_AuthorizationServiceV5_2.wsdl" id="469387e2-0fb1-4856-ac28-e624dc45620d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="cbbb8612-4a3d-4f8c-8e60-085d74f213b7fileName">AuthorizationServiceAUDIUSV5_2PortBinding</con:setting><con:setting id="469387e2-0fb1-4856-ac28-e624dc45620dfileName">AuthorizationServiceAUDIUSV5_2PortBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:/C:/Users/rvishnu/Desktop/Audi/AUDI%20US_API%20Gateway_15.05/WSDL/AUDIUS_AuthorizationServiceV5_2.wsdl"><con:part><con:url>file:/C:/Users/rvishnu/Desktop/Audi/AUDI%20US_API%20Gateway_15.05/WSDL/AUDIUS_AuthorizationServiceV5_2.wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://xmlns.vzt.com/APIGateway/AUDIUS_AuthorizationServiceV5_2" name="AUDIUS_AuthorizationServiceV5_2" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.vzt.com/APIGateway/AUDIUS_AuthorizationServiceV5_2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xs:schema version="1.0" targetNamespace="http://xmlns.vzt.com/APIGateway/AUDIUS_AuthorizationServiceV5_2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:self="http://xmlns.vzt.com/APIGateway/AUDIUS_AuthorizationServiceV5_2">
+      <xs:element name="Authenticate" type="self:Authenticate"/>
+      <xs:element name="AuthenticateResponse" type="self:AuthenticateResponseTypeV5_2"/>
+      <xs:complexType name="Authenticate">
+        <xs:sequence>
+          <xs:element name="AuthenticateRequestType" type="self:AuthenticateRequestTypeV5_2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateRequestTypeV5_2">
+        <xs:sequence>
+          <xs:element name="Data" type="self:AuthenticateRequestDataAreaTypeV5_2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateRequestDataAreaTypeV5_2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="self:SourceType"/>
+          <xs:element name="ExternalUserName" type="xs:string"/>
+          <xs:element name="ExternalUserID" type="xs:string"/>
+          <xs:element name="Email" type="xs:string"/>
+          <xs:element name="TraceID" type="xs:string"/>
+          <xs:element name="TraceTimestamp" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthenticateResponseTypeV5_2">
+        <xs:sequence>
+          <xs:element name="Response" type="self:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element name="Tracing" type="self:TracingType"/>
+          <xs:element name="ResponseCode" type="xs:string"/>
+          <xs:element name="ResponseStatus" type="xs:string"/>
+          <xs:element name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TracingType">
+        <xs:sequence>
+          <xs:element name="TraceID" type="xs:string"/>
+          <xs:element name="TraceTimestamp" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </types>
+  <message name="Authenticate">
+    <part name="parameters" element="tns:Authenticate"/>
+  </message>
+  <message name="AuthenticateResponse">
+    <part name="parameters" element="tns:AuthenticateResponse"/>
+  </message>
+  <portType name="AUDIUS_AuthorizationServiceV5_2">
+    <operation name="Authenticate">
+      <input wsam:Action="Authenticate" message="tns:Authenticate"/>
+      <output wsam:Action="http://xmlns.vzt.com/APIGateway/AUDIUS_AuthorizationServiceV5_2/AuthenticateResponse" message="tns:AuthenticateResponse"/>
+    </operation>
+  </portType>
+  <binding name="AuthorizationServiceAUDIUSV5_2PortBinding" type="tns:AUDIUS_AuthorizationServiceV5_2">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="Authenticate">
+      <soap:operation soapAction="Authenticate"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AUDIUS_AuthorizationServiceV5_2">
+    <port name="AuthorizationServiceAUDIUSV5_2Port" binding="tns:AuthorizationServiceAUDIUSV5_2PortBinding">
+      <soap:address location="https://Domain/SOAP/AUDIUS_AuthorizationServiceV5_2"/>
+    </port>
+  </service>
+  <documentation>Copyright (c) 2013 Verizon. All Rights Reserved.</documentation>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://Domain/SOAP/AUDIUS_AuthorizationServiceV5_2</con:endpoint></con:endpoints><con:environmentSpec><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:interface>

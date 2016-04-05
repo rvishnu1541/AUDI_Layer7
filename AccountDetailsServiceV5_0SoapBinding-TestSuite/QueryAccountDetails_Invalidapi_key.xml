@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="QueryAccountDetails_Invalidapi_key" searchProperties="true" id="ca7fc970-7103-4c51-849d-7e7a4739727b" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bb14b333-e646-4e76-aeef-cc1c21810af2fileName">QueryAccountDetails_Invalidapi_key</con:setting><con:setting id="ca7fc970-7103-4c51-849d-7e7a4739727bfileName">QueryAccountDetails_Invalidapi_key</con:setting></con:settings><con:testStep type="datasource" name="DataSource" id="50098d96-29ee-4d49-ab95-9822406d532d"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>D:/TestData/AUDI_US_Layer7_TestData.xlsx</file><worksheet>AUDI_TestData</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty></con:configuration></con:dataSource><con:property>AccountId</con:property><con:property>PIN</con:property><con:property>VIN</con:property><con:property>TCUID</con:property><con:property>UserId</con:property><con:property>api_key</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="request" name="QueryAccountDetails" id="ac855ce9-a763-4aa4-8bdd-99be44aac3b6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AccountDetailsServiceV5_0SoapBinding</con:interface><con:operation>QueryAccountDetails</con:operation><con:request name="QueryAccountDetails" id="974761c4-aef5-4697-bb1e-4f6e04125af6" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/AccountDetailsServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://ns.hughestelematics.com/Gateway/service/AccountDetailsService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Core/Account/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+     <api_key>b91cd52b86b5462b8c2b8ec41cfe31</api_key> 
+   ${#Project#SessionToken}
+   </soapenv:Header>
+   <soapenv:Body>
+      <acc:QueryAccountDetails>
+         <!--Optional:-->
+         <QueryAccountDetails>
+            <v1:context>
+               <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>anji464etwses</v11:TransactionId>
+               <v11:Timestamp>2015-05-06T13:02:22.929Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--Optional:-->
+               <v1:VIN>${DataSource#VIN}</v1:VIN>
+               <!--Optional:-->
+               <v1:OEM>VW</v1:OEM>
+               <!--Optional:-->
+               <v1:AccountID>${DataSource#AccountId}</v1:AccountID>
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               
+            </v1:Data>
+         </QueryAccountDetails>
+      </acc:QueryAccountDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="eb2f7ab5-6af8-46ff-8018-70139e88c8fb" name="Contains"><con:configuration><token>4230003</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="QueryAccountDetails" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

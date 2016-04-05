@@ -1,0 +1,1511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AccountDetailsServiceV5_0SoapBinding" type="wsdl" bindingName="{http://ns.hughestelematics.com/Gateway/service/AccountDetailsService}AccountDetailsServiceV5_0SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Layer%207/L7%20My%20files/WSDL_VW_US_1/AccountDetailsServiceV5_0.wsdl" id="b383dda3-d1f7-40f8-b209-b07c8aff7111" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="2413898c-3ae1-40b7-b479-19b0f6f678effileName">AccountDetailsServiceV5_0SoapBinding</con:setting><con:setting id="b383dda3-d1f7-40f8-b209-b07c8aff7111fileName">AccountDetailsServiceV5_0SoapBinding</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\AccountDetailsServiceV5_0.wsdl"><con:part><con:url>file:\D:\Layer%207\L7%20My%20files\WSDL_VW_US_1\AccountDetailsServiceV5_0.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AccountDetailsServiceV5_0" targetNamespace="http://ns.hughestelematics.com/Gateway/service/AccountDetailsService" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ns.hughestelematics.com/Gateway/service/AccountDetailsService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Core/Account/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1" xmlns:ns4="http://xmlns.hughestelematics.com/Gateway/Common/Phone/V1" xmlns:ns5="http://xmlns.hughestelematics.com/Gateway/Common/Email/V1" xmlns:ns6="http://xmlns.hughestelematics.com/Gateway/Common/Contact/V1" xmlns:ns7="http://xmlns.hughestelematics.com/Gateway/Common/EmergencyContact/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Core/Account/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Phone/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Email/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Contact/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/EmergencyContact/V1"/>
+      <xs:element name="AANFlag" type="xs:string"/>
+      <xs:element name="Account" type="tns:AccountType"/>
+      <xs:element name="AccountID" type="xs:string"/>
+      <xs:element name="AccountName" type="xs:string"/>
+      <xs:element name="AccountNumber" type="xs:string"/>
+      <xs:element name="AccountStatus" type="xs:string"/>
+      <xs:element name="AccountType" type="xs:string"/>
+      <xs:element name="AccountUpdateRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header" type="ns1:MessageHeader"/>
+            <xs:element name="Account" type="tns:AccountUpdateDataType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AccountUpdateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header" type="ns1:MessageHeader"/>
+            <xs:element name="Response" type="ns2:ResponseType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Address" type="ns3:Address"/>
+      <xs:element name="CancelAccount">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header" type="ns1:MessageHeader"/>
+            <xs:element name="Data">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Organization" type="tns:OrganizationType"/>
+                  <xs:element name="AccountInfo" type="tns:CancelAccountType"/>
+                  <xs:element name="ServiceRequestInfo" type="tns:CancelAccountSRType"/>
+                  <xs:element name="OrderInfo" type="tns:CancelAccountOrderType"/>
+                  <xs:element name="DeviceInfo" type="tns:CancelAccountDeviceType"/>
+                  <xs:element name="VehicleType" type="tns:CancelAccountVehicleType"/>
+                  <xs:element name="ProductType" type="tns:CancelAccountProductType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CloseAccount" type="tns:CloseAccountType"/>
+      <xs:element name="CloseAccountResponse" type="tns:CloseAccountResponseType"/>
+      <xs:element name="Comments" type="xs:string"/>
+      <xs:element name="Contact" type="ns6:ContactType"/>
+      <xs:element name="CreateAccount" type="tns:CreateAccountType"/>
+      <xs:element name="CreateAccountResponse" type="tns:CreateAccountResponseType"/>
+      <xs:element name="CreateShipmentAddressForAccount" type="tns:CreateShipmentAddressForAccountType"/>
+      <xs:element name="CreateShipmentAddressForAccountResp" type="tns:CreateShipmentAddressForAccountRespType"/>
+      <xs:element name="CustomerTier" type="xs:string"/>
+      <xs:element name="DealerCode" type="xs:string"/>
+      <xs:element name="DealerType" type="xs:string"/>
+      <xs:element name="DeleteAccount" type="tns:DeleteAccountRequestType"/>
+      <xs:element name="DeleteAccountResponse" type="tns:DeleteAccountResponseType"/>
+      <xs:element name="EMail" type="ns5:EmailAddress"/>
+      <xs:element name="ESAFlag" type="xs:string"/>
+      <xs:element name="EmergencyFirstName" type="xs:string"/>
+      <xs:element name="EmergencyLastName" type="xs:string"/>
+      <xs:element name="EmergencyPhone" type="xs:string"/>
+      <xs:element name="FirstName" type="xs:string"/>
+      <xs:element name="GetOrdersDetailsForUserResponseV50" type="tns:GetOrdersDetailsForUserResponseTypeV50"/>
+      <xs:element name="GetOrdersDetailsForUserV50" type="tns:GetOrdersDetailsForUserTypeV50"/>
+      <xs:element name="InventoryItemPartNumber" type="xs:string"/>
+      <xs:element name="LastName" type="xs:string"/>
+      <xs:element name="LostOrStolenDeviceAccount">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header" type="ns1:MessageHeader"/>
+            <xs:element name="Data">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AccountInfo" type="tns:CancelAccountType"/>
+                  <xs:element name="ServiceRequestInfo" type="tns:CancelAccountSRType"/>
+                  <xs:element name="OrderInfo" type="tns:CancelAccountOrderType"/>
+                  <xs:element name="DeviceInfo" type="tns:CancelAccountDeviceType"/>
+                  <xs:element name="VehicleType" type="tns:CancelAccountVehicleType"/>
+                  <xs:element name="ProductType" type="tns:CancelAccountProductType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MSISDN" type="xs:string"/>
+      <xs:element name="MiddleName" type="xs:string"/>
+      <xs:element name="OEM" type="xs:string"/>
+      <xs:element name="PIN" type="xs:string"/>
+      <xs:element name="Phone" type="ns4:Phone"/>
+      <xs:element name="PreferredDealer" type="xs:string"/>
+      <xs:element name="ProcessBOAccountRequest" type="tns:ProcessBOAccountRequestType"/>
+      <xs:element name="ProcessBOAccountResponse" type="tns:ProcessBOAccountResponseType"/>
+      <xs:element name="QueryAccountDetails" type="tns:QueryAccountDetailsType"/>
+      <xs:element name="QueryAccountDetailsResponse" type="tns:QueryAccountDetailsResponseType"/>
+      <xs:element name="QueryAccountDetailsResponseV50" type="tns:QueryAccountDetailsResponseTypeV50"/>
+      <xs:element name="QueryAccountDetailsV50" type="tns:QueryAccountDetailsTypeV50"/>
+      <xs:element name="ReactivateAccount" type="tns:ReactivateAccountType"/>
+      <xs:element name="ReactivateAccountResponse" type="tns:ReactivateAccountResponseType"/>
+      <xs:element name="Relationship" type="xs:string"/>
+      <xs:element name="RequestDate" type="xs:string"/>
+      <xs:element name="RequestedCancelDate" type="xs:string"/>
+      <xs:element name="SalesDealer" type="xs:string"/>
+      <xs:element name="UpdateAccount" type="tns:UpdateAccountRequestType"/>
+      <xs:element name="UpdateAccountResponse" type="tns:UpdateAccountResponseType"/>
+      <xs:element name="UpdateAccountStatus" type="tns:UpdateAccountStatusRequestType"/>
+      <xs:element name="UpdateAccountStatusResponse" type="tns:UpdateAccountStatusResponseType"/>
+      <xs:element name="UpdateCancelRequestDate" type="tns:UpdateCancelRequestDateRequestType"/>
+      <xs:element name="UpdateCancelRequestDateResponse" type="tns:UpdateCancelRequestDateResponseType"/>
+      <xs:element name="VIN" type="xs:string"/>
+      <xs:element name="WarrantyAccount">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header" type="ns1:MessageHeader"/>
+            <xs:element name="Data">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AccountInfo" type="tns:CancelAccountType"/>
+                  <xs:element name="ServiceRequestInfo" type="tns:CancelAccountSRType"/>
+                  <xs:element name="OrderInfo" type="tns:CancelAccountOrderType"/>
+                  <xs:element name="DeviceInfo" type="tns:CancelAccountDeviceType"/>
+                  <xs:element name="VehicleType" type="tns:CancelAccountVehicleType"/>
+                  <xs:element name="ProductType" type="tns:CancelAccountProductType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isAccountExistForEmailRequest" type="tns:isAccountExistForEmailRequestType"/>
+      <xs:element name="isAccountExistForEmailResponse" type="tns:isAccountExistForEmailResponseType"/>
+      <xs:complexType name="QueryAccountDetailsTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:QueryAccountDetailsInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryAccountDetailsInputDataAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="OEM" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="DealerType" type="xs:string"/>
+          <xs:element minOccurs="0" name="DealerCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="PIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MSISDN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryAccountDetailsResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:QueryAccountDetailsResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryAccountDetailsResponseDataAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerTier" type="xs:string"/>
+          <xs:element minOccurs="0" name="ESAFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountName" type="xs:string"/>
+          <xs:element minOccurs="0" name="Address" type="ns3:Address"/>
+          <xs:element minOccurs="0" name="Phone" type="ns4:Phone"/>
+          <xs:element minOccurs="0" name="EMail" type="ns5:EmailAddress"/>
+          <xs:element minOccurs="0" name="Contact" type="ns6:ContactType"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="PreferredDealer" type="xs:string"/>
+          <xs:element default="N" minOccurs="0" name="AANFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="SalesDealer" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmergencyFirstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmergencyLastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmergencyPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="Relationship" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrdersDetailsForUserTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:GetOrdersDetailsForUserReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrdersDetailsForUserReqDataType">
+        <xs:sequence>
+          <xs:element name="UserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrdersDetailsForUserResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GetOrdersDetailsForUserResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrdersDetailsForUserResponseDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrderStatusInfoList" type="tns:OrderStatusTypeList"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderStatusTypeList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="OrderStatusInfo" type="tns:OrderStatusInfoType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderStatusInfoType">
+        <xs:sequence>
+          <xs:element name="Vin" type="xs:string"/>
+          <xs:element name="VehicleLicensePlate" type="xs:string"/>
+          <xs:element name="Alias" type="xs:string"/>
+          <xs:element name="Veh_Possession_Code" type="xs:string"/>
+          <xs:element name="Veh_Possession_Code_Status" type="xs:string"/>
+          <xs:element name="Veh_Possession_Code_Exp_Time" type="xs:dateTime"/>
+          <xs:element name="OrderStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TextMessage">
+        <xs:sequence>
+          <xs:element name="PhoneNumber" type="xs:string"/>
+          <xs:element name="Carrier" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccountType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerTier" type="xs:string"/>
+          <xs:element minOccurs="0" name="ESAFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCID" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="Vin" type="xs:string"/>
+          <xs:element minOccurs="0" name="Oemid" type="xs:string"/>
+          <xs:element minOccurs="0" name="PreferredDealer" type="xs:string"/>
+          <xs:element minOccurs="0" name="AutomaticAlarmNotification" type="tns:AutomaticAlarmNotificationType"/>
+          <xs:element minOccurs="0" name="PreferredDealerName" type="xs:string"/>
+          <xs:element minOccurs="0" name="SalesDealerCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="SalesDealer" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProductPackageName" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderType" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="GroupAssociationId" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountAssociation" type="tns:AccountAssociationType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AutomaticAlarmNotificationType">
+        <xs:sequence>
+          <xs:element default="N" name="AANFlag" type="xs:string"/>
+          <xs:element name="AlarmNotificationType" type="tns:AlarmNotification"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AlarmNotification">
+        <xs:sequence>
+          <xs:element name="EmailAddress" type="xs:string"/>
+          <xs:element name="PhoneNumber" type="xs:string"/>
+          <xs:element name="TextMessage" type="tns:TextMessage"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccountAssociationType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParentAccount" type="tns:ParentAccountType"/>
+          <xs:element minOccurs="0" name="ChildAccounts" type="tns:ChildAccountsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParentAccountType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChildAccountsType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="AccountID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountId" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCId" type="xs:string"/>
+          <xs:element minOccurs="0" name="OEMId" type="xs:string"/>
+          <xs:element minOccurs="0" name="Vin" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountFirstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountMiddleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountLastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="RequestDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrganizationName" type="xs:string"/>
+          <xs:element name="AccountAddress" type="tns:CancelAccountAddressType"/>
+          <xs:element name="AccountContacts" type="tns:CancelAccountContactsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" type="xs:string"/>
+          <xs:element minOccurs="0" name="Address2" type="xs:string"/>
+          <xs:element minOccurs="0" name="Address3" type="xs:string"/>
+          <xs:element minOccurs="0" name="Address4" type="xs:string"/>
+          <xs:element minOccurs="0" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" name="State" type="xs:string"/>
+          <xs:element minOccurs="0" name="ZipCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="Country" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountContactsType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Phone" type="tns:CancelAccountPhoneType"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountPhoneType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PhoneNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="MobileNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountSRType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SRNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="SRType" type="xs:string"/>
+          <xs:element minOccurs="0" name="SRDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="SRDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountOrderType">
+        <xs:sequence>
+          <xs:element name="Orders">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Order">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="OrderNumber" type="xs:string"/>
+                      <xs:element minOccurs="0" name="OrderDate" type="xs:string"/>
+                      <xs:element minOccurs="0" name="OrderType" type="xs:string"/>
+                      <xs:element minOccurs="0" name="TrackingNumber" type="xs:string"/>
+                      <xs:element minOccurs="0" name="ShippingMethod" type="xs:string"/>
+                      <xs:element minOccurs="0" name="ShipmentDate" type="xs:string"/>
+                      <xs:element minOccurs="0" name="ShipmentReceivedDate" type="xs:string"/>
+                      <xs:element minOccurs="0" name="StockType" type="xs:string"/>
+                      <xs:element minOccurs="0" name="Quantity" type="xs:string"/>
+                      <xs:element name="OrderAddress" type="tns:CancelAccountAddressType"/>
+                      <xs:element name="OrderContacts" type="tns:CancelAccountContactsType"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountDeviceType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceSerialNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceType" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceProfileId" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceProfileVersion" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceProvisionedDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceInstalledDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceUnInstalledDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceActivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceMDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceMEID" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceIMSI" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceMIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="WirelessCarrier" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeviceICCID" type="xs:string"/>
+          <xs:element name="Parts">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Part">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
+                      <xs:element minOccurs="0" name="PartNumber" type="xs:string"/>
+                      <xs:element minOccurs="0" name="Name" type="xs:string"/>
+                      <xs:element minOccurs="0" name="PartOrderNumber" type="xs:string"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountVehicleType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Year" type="xs:string"/>
+          <xs:element minOccurs="0" name="Make" type="xs:string"/>
+          <xs:element minOccurs="0" name="Model" type="xs:string"/>
+          <xs:element minOccurs="0" name="BodyType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelAccountProductType">
+        <xs:sequence>
+          <xs:element name="Products">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" name="ProductName" type="xs:string"/>
+                <xs:element minOccurs="0" name="ProductCancelDate" type="xs:string"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrganizationType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrganizationId" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrganizationName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CloseAccountDataType">
+        <xs:sequence>
+          <xs:element name="POID" type="xs:string"/>
+          <xs:element name="BillInfo" type="xs:string"/>
+          <xs:element name="ServiceStatus" type="xs:string"/>
+          <xs:element name="Session" type="xs:string"/>
+          <xs:element name="ProgramName" type="xs:string"/>
+          <xs:element name="Description" type="xs:string"/>
+          <xs:element name="ScheduleTime" type="xs:dateTime"/>
+          <xs:element name="EndTime" type="xs:dateTime"/>
+          <xs:element name="StartTime" type="xs:dateTime"/>
+          <xs:element name="StatusPropogate" type="xs:string"/>
+          <xs:element name="ReasonCode" type="xs:string"/>
+          <xs:element name="Statuses">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Status" type="xs:string"/>
+                <xs:element name="StatusFlags" type="xs:int"/>
+                <xs:element minOccurs="0" name="PurchaseEndTime" type="xs:dateTime"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProcessBOAccountRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:ProcessBOAccountDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProcessBOAccountDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TransactionDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReceiptNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="ItemNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReceiptType" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReceivedQuantity" type="xs:string"/>
+          <xs:element minOccurs="0" name="TotalOnHandQuantity" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrganizationCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="StockType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AccountUpdateDataType">
+        <xs:sequence>
+          <xs:element name="AccountInfo" type="tns:AccountType"/>
+          <xs:element name="EmergencyContactsInfo" type="ns7:EmergencyContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryAccountDetailsResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:QueryAccountDetailsResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAccountRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:DeleteAccountDateAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAccountDateAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="view" type="xs:string"/>
+          <xs:element minOccurs="0" name="username" type="xs:string"/>
+          <xs:element minOccurs="0" name="purgedata" type="xs:string"/>
+          <xs:element minOccurs="0" name="userticket" type="xs:string"/>
+          <xs:element minOccurs="0" name="domain" type="xs:string"/>
+          <xs:element minOccurs="0" name="auth" type="xs:string"/>
+          <xs:element minOccurs="0" name="dataset" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReactivateAccountType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:ReactivateAccountDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReactivateAccountDataAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountInfo" type="tns:AccountType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountStatusRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:UpdateAccountStatusDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountStatusDataAreaType">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="CreateShipmentAddressForAccountType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:CreateShipmentAddressForAccountDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateShipmentAddressForAccountDataAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="Address" type="ns3:Address"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateAccountType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:CreateAccountDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateAccountDataAreaType">
+        <xs:sequence>
+          <xs:element default="N" name="textMessage" type="xs:string"/>
+          <xs:element minOccurs="0" name="DateOfAcceptance" type="xs:string"/>
+          <xs:element minOccurs="0" name="SalesPerson" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" name="ContactInfo" type="ns6:ContactType"/>
+          <xs:element minOccurs="0" name="AccountInfo" type="tns:AccountType"/>
+          <xs:element minOccurs="0" name="AutomaticAlarmNotification" type="tns:AutomaticAlarmNotificationType"/>
+          <xs:element minOccurs="0" name="EmergencyContactInfo" type="ns7:EmergencyContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReactivateAccountResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CloseAccountType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:CloseAccountDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:UpdateAccountDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountDataAreaType">
+        <xs:sequence>
+          <xs:element name="UpdateAccount" type="tns:UpdateAccountType"/>
+          <xs:element minOccurs="0" name="Description" type="xs:string"/>
+          <xs:element minOccurs="0" name="OptFreeText" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountName" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountSubType" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="Pin" type="xs:string"/>
+          <xs:element minOccurs="0" name="Prefix" type="xs:string"/>
+          <xs:element minOccurs="0" name="Suffix" type="xs:string"/>
+          <xs:element name="FirstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="MiddleName" type="xs:string"/>
+          <xs:element name="LastName" type="xs:string"/>
+          <xs:element name="EmergencyFirstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmergencyMiddleName" type="xs:string"/>
+          <xs:element name="EmergencyLastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="Address" type="ns3:Address"/>
+          <xs:element minOccurs="0" name="Email" type="xs:string"/>
+          <xs:element minOccurs="0" name="PrimaryPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="MainPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmergencyPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmergencyEmail" type="xs:string"/>
+          <xs:element minOccurs="0" name="Fax" type="xs:string"/>
+          <xs:element minOccurs="0" name="PreferredDealer" type="xs:string"/>
+          <xs:element minOccurs="0" name="Relationship" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerTier" type="xs:string"/>
+          <xs:element minOccurs="0" name="ESAFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="AANFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="Contact" type="ns6:ContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAccountExistForEmailRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:isAccountExistForEmailInputDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAccountExistForEmailInputDataType">
+        <xs:sequence>
+          <xs:element name="EmailId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateAccountResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:CreateAccountResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateAccountResponseDataAreaType">
+        <xs:sequence>
+          <xs:element default="N" name="textMessage" type="xs:string"/>
+          <xs:element minOccurs="0" name="DateOfAcceptance" type="xs:string"/>
+          <xs:element minOccurs="0" name="SalesPerson" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" name="ContactInfo" type="ns6:ContactType"/>
+          <xs:element minOccurs="0" name="AccountInfo" type="tns:AccountType"/>
+          <xs:element minOccurs="0" name="AutomaticAlarmNotification" type="tns:AutomaticAlarmNotificationType"/>
+          <xs:element minOccurs="0" name="EmergencyContactInfo" type="ns7:EmergencyContactType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateCancelRequestDateResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CloseAccountResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreateShipmentAddressForAccountRespType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAccountExistForEmailResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:isAccountExistForEmailOutputDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isAccountExistForEmailOutputDataType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountExists" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAccountResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:DeleteAccountResponseDateAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeleteAccountResponseDateAreaType">
+        <xs:sequence>
+          <xs:element name="domain" type="xs:string"/>
+          <xs:element name="userticket" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateCancelRequestDateRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:UpdateCancelRequestDateDateAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateCancelRequestDateDateAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceID" type="xs:string"/>
+          <xs:element minOccurs="0" name="RequestedEndDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProcessBOAccountResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateAccountStatusResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryAccountDetailsType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="Data" type="tns:QueryAccountDetailsInputDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrdersDetailsForUserType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element name="Data" type="tns:GetOrdersDetailsForUserReqDataType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrdersDetailsForUserResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader2"/>
+          <xs:element minOccurs="0" name="Data" type="tns:GetOrdersDetailsForUserResponseDataType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Response" type="tns:ResponseType"/>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="ResponseCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseStatus" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="ResponseDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Phone/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Phone/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Phone">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PrimaryPhone" type="tns:PhoneType"/>
+          <xs:element minOccurs="0" name="CellPhone" type="tns:PhoneType"/>
+          <xs:element minOccurs="0" name="HomePhone" type="tns:PhoneType"/>
+          <xs:element minOccurs="0" name="WorkPhone" type="tns:PhoneType"/>
+          <xs:element minOccurs="0" name="Fax" type="tns:PhoneType"/>
+          <xs:element minOccurs="0" name="PrimaryPhoneType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PhoneType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PhoneNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="CountryCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Name/V1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CustomerName">
+        <xs:sequence>
+          <xs:element name="FirstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="MiddleName" type="xs:string"/>
+          <xs:element name="LastName" type="xs:string"/>
+          <xs:element default="Mr." minOccurs="0" name="Prefix" type="xs:string"/>
+          <xs:element default="II" minOccurs="0" name="Suffix" type="xs:string"/>
+          <xs:element minOccurs="0" name="PersonUId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1"/>
+      <xs:complexType name="BusinessContext">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader2">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader3">
+        <xs:sequence>
+          <xs:element name="SourceName" type="tns:SourceType"/>
+          <xs:element name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element name="Organization" type="ns1:OrgId"/>
+          <xs:element name="Region" type="tns:RegionType"/>
+          <xs:element name="ApplicationName" type="tns:ApplicationNameType"/>
+          <xs:element name="DigestHash" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageHeader">
+        <xs:sequence>
+          <xs:element name="SourceName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TargetName" type="xs:string"/>
+          <xs:element name="TransactionId" type="xs:string"/>
+          <xs:element name="Timestamp" type="xs:string"/>
+          <xs:element minOccurs="0" name="Organization" type="ns1:OrgId"/>
+          <xs:element minOccurs="0" name="Region" type="tns:RegionType"/>
+          <xs:element minOccurs="0" name="ApplicationName" type="tns:ApplicationNameType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SourceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSA"/>
+          <xs:enumeration value="SBL"/>
+          <xs:enumeration value="WPL"/>
+          <xs:enumeration value="ESA"/>
+          <xs:enumeration value="CCA"/>
+          <xs:enumeration value="MAPP"/>
+          <xs:enumeration value="WEB"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="INTERNAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="US"/>
+          <xs:enumeration value="EU"/>
+          <xs:enumeration value="China"/>
+          <xs:enumeration value="CA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApplicationNameType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CWP"/>
+          <xs:enumeration value="Android"/>
+          <xs:enumeration value="iPhone"/>
+          <xs:enumeration value="Google"/>
+          <xs:enumeration value="NavInfo"/>
+          <xs:enumeration value="MW"/>
+          <xs:enumeration value="AMP"/>
+          <xs:enumeration value="ESA Light"/>
+          <xs:enumeration value="TESA"/>
+          <xs:enumeration value="Sales Feed"/>
+          <xs:enumeration value="ARVATO"/>
+          <xs:enumeration value="Carnet"/>
+          <xs:enumeration value="Mbrace"/>
+          <xs:enumeration value="Connect"/>
+          <xs:enumeration value="APIGW"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/EmergencyContact/V1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="EmergencyContactType">
+        <xs:sequence>
+          <xs:element name="FirstName" type="xs:string"/>
+          <xs:element name="LastName" type="xs:string"/>
+          <xs:element name="Phone" type="xs:string"/>
+          <xs:element name="Relationship" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Email/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Email/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="EmailDetails" type="tns:EmailDetailsType"/>
+      <xs:complexType name="EmailAddress">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Email" type="tns:EMailType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EMailType">
+        <xs:sequence>
+          <xs:element name="EmailAddress" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmailDetailsType">
+        <xs:sequence>
+          <xs:element name="To" type="xs:string"/>
+          <xs:element name="Cc" type="xs:string"/>
+          <xs:element name="Bcc" type="xs:string"/>
+          <xs:element name="ReplyTo" type="xs:string"/>
+          <xs:element name="Subject" type="xs:string"/>
+          <xs:element name="Body" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Contact/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Name/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1" xmlns:ns3="http://xmlns.hughestelematics.com/Gateway/Common/Phone/V1" xmlns:ns4="http://xmlns.hughestelematics.com/Gateway/Common/Email/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Contact/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Name/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Phone/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Email/V1"/>
+      <xs:complexType name="ContactType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element name="Name" type="ns1:CustomerName"/>
+          <xs:element minOccurs="0" name="Age" type="xs:string"/>
+          <xs:element minOccurs="0" name="Gender" type="xs:string"/>
+          <xs:element name="Address" type="ns2:Address"/>
+          <xs:element name="Phone" type="ns3:Phone"/>
+          <xs:element name="Email" type="ns4:EmailAddress"/>
+          <xs:element name="ContactType" type="tns:ContactTypeString"/>
+          <xs:element minOccurs="0" name="PreferredContactMethod" type="xs:string"/>
+          <xs:element minOccurs="0" name="AlternateContactMethod" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceMSGContactMethod" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceMSGPhoneNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceMSGWirelessCarrier" type="xs:string"/>
+          <xs:element minOccurs="0" name="TimeZone" type="xs:string"/>
+          <xs:element minOccurs="0" name="OptionalFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="PIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="Comments" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryContactInputType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryContactOutputType">
+        <xs:sequence>
+          <xs:element name="Contact" type="tns:ContactsType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ContactsType">
+        <xs:sequence>
+          <xs:element name="Name" type="ns1:CustomerName"/>
+          <xs:element name="Address" type="ns2:Address"/>
+          <xs:element name="Phone" type="ns3:Phone"/>
+          <xs:element name="Email" type="ns4:EmailAddress"/>
+          <xs:element name="ContactType" type="tns:ContactTypeString"/>
+          <xs:element minOccurs="0" name="PreferredContactMethod" type="xs:string"/>
+          <xs:element minOccurs="0" name="AlternateContactMethod" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceMSGContactMethod" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceMSGPhoneNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceMSGWirelessCarrier" type="xs:string"/>
+          <xs:element minOccurs="0" name="TimeZone" type="xs:string"/>
+          <xs:element minOccurs="0" name="OptionalFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="PIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="Comments" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ContactTypeString">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Primary"/>
+          <xs:enumeration value="Secondary"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" version="1.0" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/CommonTypes/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonIdentifierType">
+        <xs:sequence>
+          <xs:element name="AccountID" type="xs:string"/>
+          <xs:element name="VIN" type="xs:string"/>
+          <xs:element name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="StatusIndicator" type="tns:StatusIndicatorNVPair"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatusIndicatorNVPair">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Value" type="tns:Value"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommonResponse">
+        <xs:sequence>
+          <xs:element name="responseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="responseStatus" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalDataNVPairListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="NVPair" type="tns:NVPairType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NVPairType">
+        <xs:sequence>
+          <xs:element name="contextName" type="xs:string"/>
+          <xs:element name="contextValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalDataNVPairList" type="tns:AdditionalDataNVPairListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrgId">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="chrysler"/>
+          <xs:enumeration value="MB"/>
+          <xs:enumeration value="Mercedes-Benz"/>
+          <xs:enumeration value="AAA"/>
+          <xs:enumeration value="VW"/>
+          <xs:enumeration value="StateFarm"/>
+          <xs:enumeration value="oem_id_na"/>
+          <xs:enumeration value="Nissan"/>
+          <xs:enumeration value="Audi"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true"/>
+          <xs:enumeration value="false"/>
+          <xs:enumeration value="invalid"/>
+          <xs:enumeration value="valid"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1" xmlns:tns="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Common/Response/V1"/>
+      <xs:element name="AddressError" type="xs:boolean"/>
+      <xs:element name="AddressFoundBeMoreSpecific" type="xs:boolean"/>
+      <xs:element name="AreaCode" type="xs:string"/>
+      <xs:element name="AvgLatitude" type="xs:decimal"/>
+      <xs:element name="AvgLongitude" type="xs:decimal"/>
+      <xs:element name="BarCode" type="xs:string"/>
+      <xs:element name="CMSA" type="xs:string"/>
+      <xs:element name="CSKey" type="xs:string"/>
+      <xs:element name="CarrierRoute" type="xs:string"/>
+      <xs:element name="CensusBlockNum" type="xs:string"/>
+      <xs:element name="CensusTractNum" type="xs:string"/>
+      <xs:element name="CheckDigit" type="xs:int"/>
+      <xs:element name="City" type="xs:string"/>
+      <xs:element name="CongressDistrictNumber" type="xs:string"/>
+      <xs:element name="County" type="xs:string"/>
+      <xs:element name="CountyNum" type="xs:int"/>
+      <xs:element name="CreateAddressRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header" type="ns1:MessageHeader"/>
+            <xs:element name="Data" type="tns:DataType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateAddressResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header" type="ns1:MessageHeader"/>
+            <xs:element name="ResponseData" type="tns:ResponseInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeliveryAddress" type="xs:string"/>
+      <xs:element name="DeliveryAddress2" type="xs:string"/>
+      <xs:element name="DeliveryPoint" type="xs:string"/>
+      <xs:element name="Extra" type="xs:string"/>
+      <xs:element name="FIPS" type="xs:string"/>
+      <xs:element name="FinanceNumber" type="xs:string"/>
+      <xs:element name="Firm" type="xs:string"/>
+      <xs:element name="FromLatitude" type="xs:decimal"/>
+      <xs:element name="FromLongitude" type="xs:decimal"/>
+      <xs:element name="GeocodeAddress" type="tns:GeocodeAddressType"/>
+      <xs:element name="GeocodeAddressResponse" type="tns:GeocodeAddressResponseType"/>
+      <xs:element name="LLCertainty" type="xs:int"/>
+      <xs:element name="Latitude" type="xs:string"/>
+      <xs:element name="Longitude" type="xs:string"/>
+      <xs:element name="MA" type="xs:string"/>
+      <xs:element name="MSA" type="xs:string"/>
+      <xs:element name="NeededCorrection" type="xs:boolean"/>
+      <xs:element name="PMSA" type="xs:string"/>
+      <xs:element name="PostDirection" type="xs:string"/>
+      <xs:element name="PreferredCityName" type="xs:string"/>
+      <xs:element name="PrefixDirection" type="xs:string"/>
+      <xs:element name="PriEO" type="xs:string"/>
+      <xs:element name="Primary" type="xs:string"/>
+      <xs:element name="PrimaryHigh" type="xs:string"/>
+      <xs:element name="PrimaryLow" type="xs:string"/>
+      <xs:element name="QueryCityStateForZip" type="tns:QueryCityStateForZipType"/>
+      <xs:element name="QueryCityStateForZipResponse" type="tns:QueryCityStateForZipResponseType"/>
+      <xs:element name="QueryZipForCityState" type="tns:QueryZipForCityStateType"/>
+      <xs:element name="QueryZipForCityStateResponse" type="tns:QueryZipForCityStateResponseType"/>
+      <xs:element name="RecordTypeCode" type="xs:string"/>
+      <xs:element name="ReverseAddress" type="tns:ReverseAddressType"/>
+      <xs:element name="ReverseAddressResponse" type="tns:ReverseAddressResponseType"/>
+      <xs:element name="ReverseAddressResponseV50" type="tns:ReverseAddressResponseTypeV50"/>
+      <xs:element name="ReverseAddressV50" type="tns:ReverseAddressTypeV50"/>
+      <xs:element name="SearchAddressRequest" type="tns:SearchAddressRequestType"/>
+      <xs:element name="SearchAddressRequestV50" type="tns:SearchAddressRequestTypeV50"/>
+      <xs:element name="SearchAddressResponse" type="tns:SearchAddressResponseType"/>
+      <xs:element name="SearchAddressResponseV50" type="tns:SearchAddressResponseTypeV50"/>
+      <xs:element name="SecEO" type="xs:string"/>
+      <xs:element name="Secondary" type="xs:string"/>
+      <xs:element name="SecondaryHigh" type="xs:string"/>
+      <xs:element name="SecondaryLow" type="xs:string"/>
+      <xs:element name="SecondaryNumber" type="xs:string"/>
+      <xs:element name="StateAbbrev" type="xs:string"/>
+      <xs:element name="StateLegislativeLower" type="xs:string"/>
+      <xs:element name="StateLegislativeUpper" type="xs:string"/>
+      <xs:element name="StreetName" type="xs:string"/>
+      <xs:element name="Suffix" type="xs:string"/>
+      <xs:element name="TimeZone" type="xs:string"/>
+      <xs:element name="ToLatitude" type="xs:decimal"/>
+      <xs:element name="ToLongitude" type="xs:decimal"/>
+      <xs:element name="UpdateKey" type="xs:string"/>
+      <xs:element name="ValidateAddress" type="tns:ValidateAddressType"/>
+      <xs:element name="ValidateAddressResponse" type="tns:ValidateAddressResponseType"/>
+      <xs:element name="ValidateAddressResponseV50" type="tns:ValidateAddressResponseTypeV50"/>
+      <xs:element name="ValidateAddressV50" type="tns:ValidateAddressTypeV50"/>
+      <xs:element name="ZipCode" type="xs:string"/>
+      <xs:element name="hasDaylightSavings" type="xs:boolean"/>
+      <xs:complexType name="Address">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="AddressDetails" type="tns:AddressType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddressType">
+        <xs:sequence>
+          <xs:element name="Address1" type="xs:string"/>
+          <xs:element minOccurs="0" name="Address2" type="xs:string"/>
+          <xs:element minOccurs="0" name="District" type="xs:string"/>
+          <xs:element name="City" type="xs:string"/>
+          <xs:element name="StateProvince" type="xs:string"/>
+          <xs:element minOccurs="0" name="Country" type="xs:string"/>
+          <xs:element minOccurs="0" name="County" type="xs:string"/>
+          <xs:element minOccurs="0" name="ZipCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="AddressType" type="xs:string"/>
+          <xs:element minOccurs="0" name="PrimaryAddressFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="Longitude" type="xs:string"/>
+          <xs:element minOccurs="0" name="Latitude" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReverseAddressType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:ReverseAddressDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReverseAddressDataAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Longitude" type="xs:string"/>
+          <xs:element minOccurs="0" name="Latitude" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DataType">
+        <xs:sequence>
+          <xs:element name="AccountNumber" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="AddressInfo" type="tns:AddressType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAddressResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:SearchAddressResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAddressResponseDataAreaType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Address" type="tns:AddressType"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAddressRequestType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:SearchAddressRequestDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAddressRequestDataAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SearchAddressParameter" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeocodeAddressType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:GeocodeAddressDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeocodeAddressDataAreaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressText" type="xs:string"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReverseAddressResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:ReverseAddressResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReverseAddressResponseDataAreaType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Address" type="tns:AddressType"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateAddressTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ValidateAddressDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateAddressDataAreaType">
+        <xs:sequence>
+          <xs:element name="Address" type="tns:AddressType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateAddressResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:ValidateAddressResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateAddressResponseDataAreaType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="StandardizedAddress" type="tns:StandardizedAddressType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StandardizedAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressError" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="AddressFoundBeMoreSpecific" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="CheckDigit" type="xs:int"/>
+          <xs:element minOccurs="0" name="NeededCorrection" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="FromLongitude" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="FromLatitude" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ToLongitude" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ToLatitude" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="AvgLongitude" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="AvgLatitude" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="hasDaylightSavings" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="LLCertainty" type="xs:int"/>
+          <xs:element minOccurs="0" name="CountyNum" type="xs:int"/>
+          <xs:element minOccurs="0" name="Firm" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryAddress2" type="xs:string"/>
+          <xs:element minOccurs="0" name="PrimaryLow" type="xs:string"/>
+          <xs:element minOccurs="0" name="PrimaryHigh" type="xs:string"/>
+          <xs:element minOccurs="0" name="PriEO" type="xs:string"/>
+          <xs:element minOccurs="0" name="SecEO" type="xs:string"/>
+          <xs:element minOccurs="0" name="SecondaryLow" type="xs:string"/>
+          <xs:element minOccurs="0" name="SecondaryHigh" type="xs:string"/>
+          <xs:element minOccurs="0" name="Secondary" type="xs:string"/>
+          <xs:element minOccurs="0" name="Extra" type="xs:string"/>
+          <xs:element minOccurs="0" name="City" type="xs:string"/>
+          <xs:element minOccurs="0" name="StateAbbrev" type="xs:string"/>
+          <xs:element minOccurs="0" name="ZipCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="CarrierRoute" type="xs:string"/>
+          <xs:element minOccurs="0" name="County" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeliveryPoint" type="xs:string"/>
+          <xs:element minOccurs="0" name="BarCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="CSKey" type="xs:string"/>
+          <xs:element minOccurs="0" name="UpdateKey" type="xs:string"/>
+          <xs:element minOccurs="0" name="RecordTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="CongressDistrictNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="FIPS" type="xs:string"/>
+          <xs:element minOccurs="0" name="FinanceNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="CMSA" type="xs:string"/>
+          <xs:element minOccurs="0" name="PMSA" type="xs:string"/>
+          <xs:element minOccurs="0" name="MSA" type="xs:string"/>
+          <xs:element minOccurs="0" name="MA" type="xs:string"/>
+          <xs:element minOccurs="0" name="TimeZone" type="xs:string"/>
+          <xs:element minOccurs="0" name="AreaCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="PreferredCityName" type="xs:string"/>
+          <xs:element minOccurs="0" name="CensusBlockNum" type="xs:string"/>
+          <xs:element minOccurs="0" name="CensusTractNum" type="xs:string"/>
+          <xs:element minOccurs="0" name="Primary" type="xs:string"/>
+          <xs:element minOccurs="0" name="PrefixDirection" type="xs:string"/>
+          <xs:element minOccurs="0" name="StreetName" type="xs:string"/>
+          <xs:element minOccurs="0" name="Suffix" type="xs:string"/>
+          <xs:element minOccurs="0" name="PostDirection" type="xs:string"/>
+          <xs:element minOccurs="0" name="SecondaryNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="StateLegislativeUpper" type="xs:string"/>
+          <xs:element minOccurs="0" name="StateLegislativeLower" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryCityStateForZipResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:QueryCityStateForZipResponseDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryCityStateForZipResponseDataAreaType">
+        <xs:sequence>
+          <xs:element name="ValidationResult" type="ns2:ResponseType"/>
+          <xs:element name="StandardizedAddress" type="tns:StandardizedAddressType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAddressRequestTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:SearchAddressRequestDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseInfo">
+        <xs:sequence>
+          <xs:element name="ResponseStatus" type="xs:string"/>
+          <xs:element name="ResponseMessage" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReverseAddressTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ReverseAddressDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryZipForCityStateType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:QueryZipForCityStateDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryZipForCityStateDataAreaType">
+        <xs:sequence>
+          <xs:element name="City" type="xs:string"/>
+          <xs:element name="StateAbbrev" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateAddressResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ValidateAddressResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryZipForCityStateResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:QueryZipForCityStateResponseDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryZipForCityStateResponseDataAreaType">
+        <xs:sequence>
+          <xs:element name="ValidationResult" type="ns2:ResponseType"/>
+          <xs:element name="ZipCodeList" type="tns:ZipCodeListType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ZipCodeListType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ZipCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryCityStateForZipType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:QueryCityStateForZipDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryCityStateForZipDataAreaType">
+        <xs:sequence>
+          <xs:element name="ZipCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidateAddressType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:ValidateAddressDataAreaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReverseAddressResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:ReverseAddressResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchAddressResponseTypeV50">
+        <xs:sequence>
+          <xs:element name="context" type="ns1:BusinessContext"/>
+          <xs:element name="Data" type="tns:SearchAddressResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeocodeAddressResponseType">
+        <xs:sequence>
+          <xs:element name="Header" type="ns1:MessageHeader"/>
+          <xs:element name="DataArea" type="tns:GeocodeAddressResponseDataAreaType"/>
+          <xs:element name="Response" type="ns2:ResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GeocodeAddressResponseDataAreaType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Address" type="tns:AddressType"/>
+          <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="VIN" type="xs:string"/>
+          <xs:element minOccurs="0" name="MDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="TCUID" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Address2">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="AddressDetails" type="tns:AddressType2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddressType2">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="AddressLine" type="xs:string"/>
+          <xs:element minOccurs="0" name="District" type="xs:string"/>
+          <xs:element name="City" type="xs:string"/>
+          <xs:element minOccurs="0" name="StateProvince" type="xs:string"/>
+          <xs:element name="Country" type="xs:string"/>
+          <xs:element minOccurs="0" name="County" type="xs:string"/>
+          <xs:element name="ZipCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="AddressType" type="tns:AddrTypes"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="AddrTypes">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Primary"/>
+          <xs:enumeration value="secondary"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.hughestelematics.com/Gateway/Account/V1" xmlns="http://xmlns.hughestelematics.com/Gateway/Account/V1" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/Account/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/Account/V1"/>
+      <xs:element name="GetOrdersDetailsForUserResponse" type="ns1:GetOrdersDetailsForUserResponseTypeV50"/>
+      <xs:element name="QueryAccountDetailsResponse" type="ns1:QueryAccountDetailsResponseTypeV50"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ns.hughestelematics.com/Gateway/service/AccountDetailsService" xmlns:ns1="http://xmlns.hughestelematics.com/Gateway/Core/Account/V1" xmlns:ns2="http://xmlns.hughestelematics.com/Gateway/Account/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Core/Account/V1"/>
+      <xs:import namespace="http://xmlns.hughestelematics.com/Gateway/Account/V1"/>
+      <xs:element name="GetOrdersDetailsForUser" type="tns:GetOrdersDetailsForUser"/>
+      <xs:element name="GetOrdersDetailsForUserResponse" type="tns:GetOrdersDetailsForUserResponse"/>
+      <xs:element name="QueryAccountDetails" type="tns:QueryAccountDetails"/>
+      <xs:element name="QueryAccountDetailsResponse" type="tns:QueryAccountDetailsResponse"/>
+      <xs:complexType name="QueryAccountDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QueryAccountDetails" type="ns1:QueryAccountDetailsTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="QueryAccountDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:QueryAccountDetailsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrdersDetailsForUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetOrdersDetailsForUser" type="ns1:GetOrdersDetailsForUserTypeV50"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrdersDetailsForUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns2:GetOrdersDetailsForUserResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="QueryAccountDetails">
+    <wsdl:part element="tns:QueryAccountDetails" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOrdersDetailsForUserResponse">
+    <wsdl:part element="tns:GetOrdersDetailsForUserResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryAccountDetailsResponse">
+    <wsdl:part element="tns:QueryAccountDetailsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOrdersDetailsForUser">
+    <wsdl:part element="tns:GetOrdersDetailsForUser" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AccountDetailsServiceV5_0">
+    <wsdl:operation name="QueryAccountDetails">
+      <wsdl:input message="tns:QueryAccountDetails" name="QueryAccountDetails"></wsdl:input>
+      <wsdl:output message="tns:QueryAccountDetailsResponse" name="QueryAccountDetailsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersDetailsForUser">
+      <wsdl:input message="tns:GetOrdersDetailsForUser" name="GetOrdersDetailsForUser"></wsdl:input>
+      <wsdl:output message="tns:GetOrdersDetailsForUserResponse" name="GetOrdersDetailsForUserResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountDetailsServiceV5_0SoapBinding" type="tns:AccountDetailsServiceV5_0">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="QueryAccountDetails">
+      <soap:operation soapAction="QueryAccountDetails" style="document"/>
+      <wsdl:input name="QueryAccountDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="QueryAccountDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersDetailsForUser">
+      <soap:operation soapAction="GetOrdersDetailsForUser" style="document"/>
+      <wsdl:input name="GetOrdersDetailsForUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetOrdersDetailsForUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountDetailsServiceV5_0">
+    <wsdl:port binding="tns:AccountDetailsServiceV5_0SoapBinding" name="AccountDetailsServicePort">
+      <soap:address location="https://Domain/SOAP/AccountDetailsServiceV5_0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/AccountDetailsServiceV5_0</con:endpoint></con:endpoints><con:environmentSpec><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:interface>

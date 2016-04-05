@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetReverseAddress TestCase Neg" searchProperties="true" id="2539bdcc-167d-4d69-bd2f-984d8259607f" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="0ea81936-a29e-4f46-be4c-1d45b5d2e243fileName">GetReverseAddress-TestCase-Neg</con:setting><con:setting id="2539bdcc-167d-4d69-bd2f-984d8259607ffileName">GetReverseAddress-TestCase-Neg</con:setting></con:settings><con:testStep type="request" name="GetReverseAddress" id="6cfce81e-dab2-41d3-9b23-bb4087521f66"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AddressServiceV5_0SoapBinding</con:interface><con:operation>GetReverseAddress</con:operation><con:request name="GetReverseAddress" id="7260ab63-5c66-493e-a796-6017a925cff5" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ServiceEndPoint}/SOAP/AddressServiceV5_0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:add="http://ns.hughestelematics.com/Gateway/service/AddressService" xmlns:v1="http://xmlns.hughestelematics.com/Gateway/Common/Address/V1" xmlns:v11="http://xmlns.hughestelematics.com/Gateway/Common/Header/V1">
+   <soapenv:Header>
+   <api_key>${#Project#api_key}</api_key>
+   ${#Project#SessionToken}
+  </soapenv:Header>
+   <soapenv:Body>
+      <add:GetReverseAddress>
+         <!--Optional:-->
+         <GetReverseAddressRequest>
+              <v1:context>
+               <v11:SourceName>WEB</v11:SourceName>
+               <v11:TransactionId>anjitest${=new java.text.SimpleDateFormat("ddMMyyyyHHmmss").format(new Date())}</v11:TransactionId>
+               <v11:Timestamp>${=new java.text.SimpleDateFormat("yyyy-MM-dd").format(new Date())}T${=new java.text.SimpleDateFormat("HH:mm:ss.SSS").format(new Date())}Z</v11:Timestamp>
+               <v11:Organization>${#Project#Organization}</v11:Organization>
+               <v11:Region>US</v11:Region>
+               <v11:ApplicationName>CWP</v11:ApplicationName>
+            </v1:context>
+            <v1:Data>
+               <!--Optional:-->
+               <v1:Longitude>-83.765555</v1:Longitude>
+               <!--Optional:-->
+               <v1:Latitude>42.3070550</v1:Latitude>
+               <!--Optional:-->
+               <v1:AccountNumber>${#Project#AccountId}</v1:AccountNumber>
+               <!--Optional:-->
+               <v1:VIN>${#Project#VIN}</v1:VIN>
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               <v1:TCUID>${#Project#TCUID}</v1:TCUID>
+            </v1:Data>
+         </GetReverseAddressRequest>
+      </add:GetReverseAddress>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:environmentSpec><con:entry environmentId="b56e681a-c44d-4881-95c6-fd3e3223d2a2"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="GetReverseAddress" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="3801e45a-ec31-4686-9cbf-01651b8a4315"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="6b0cf27d-4452-476c-b08b-8662a8c7e039"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>
