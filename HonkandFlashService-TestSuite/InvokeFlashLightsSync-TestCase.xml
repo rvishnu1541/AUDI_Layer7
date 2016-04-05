@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="InvokeFlashLightsSync TestCase" searchProperties="true" id="2777f8ab-abbc-4280-949e-c68da60df141" xmlns:con="http://eviware.com/soapui/config"><con:description>TestCase generated for REST Resource [InvokeFlashLightsSync] located at [/REST/HonkAndFlashServiceV5_0/InvokeFlashLightsSync]</con:description><con:settings><con:setting id="3bba2367-48ad-444a-a598-53395ee698b8fileName">InvokeFlashLightsSync-TestCase</con:setting><con:setting id="2777f8ab-abbc-4280-949e-c68da60df141fileName">InvokeFlashLightsSync-TestCase</con:setting></con:settings><con:testStep type="restrequest" name="InvokeFlashLightSync" id="df10d857-7a35-439b-bcf6-ca4b9ecfe006"><con:settings/><con:config service="AuthenticateV5.2" resourcePath="/REST/AUDIUS_AuthorizationServiceV5_2/Authenticate" methodName="Authenticate" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="InvokeFlashLightSync" mediaType="application/json" postQueryString="false" id="e285600a-6230-472b-84bb-801691a2bddf"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#SessionToken}"/>
+  &lt;con:entry key="api_key" value="${#Project#api_key}"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndPoint}</con:endpoint><con:request>{
+"context": {
+"SourceName": "WEB",
+"TransactionId": "Vishnu83463763",
+"Timestamp": "2014-09-19T22:14:02.001Z",
+"Organization": "${#Project#Organization}",
+"Region": "US",
+"ApplicationName": "CWP"
+},
+"Data": {
+"InvokeFlashLightsCommand": {
+"flashTime": "10",
+"serviceDuration": "10",
+"serviceOperationCode": "HonkAndFlash"
+},
+"EmailId": "vishnu.revuri@one.verizon.com",
+"AccountId": "${#Project#AccountId}",
+"TCUID": "${#Project#TCUID}",
+"VIN": "${#Project#VIN}",
+"UserId": "${#Project#AccountId}"
+}
+}</con:request><con:originalUri>https://api-test.vtitel.net/REST/HonkAndFlashServiceV5_0/InvokeFlashLightsSync</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

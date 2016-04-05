@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetHonkFlashStatus TestCase" searchProperties="true" id="a9fe2d69-0deb-495e-86ba-496db5cbb151" xmlns:con="http://eviware.com/soapui/config"><con:description>TestCase generated for REST Resource [GetHonkFlashStatus] located at [/REST/HonkAndFlashServiceV5_0/GetHonkFlashStatus]</con:description><con:settings><con:setting id="ad3d1a10-7292-467f-a4ce-99f0b96f7ecdfileName">GetHonkFlashStatus-TestCase</con:setting><con:setting id="a9fe2d69-0deb-495e-86ba-496db5cbb151fileName">GetHonkFlashStatus-TestCase</con:setting></con:settings><con:testStep type="restrequest" name="GetHonkFlashStatus" id="4eb94e7a-5337-43b0-9cd8-1ca7d44a1f55"><con:settings/><con:config service="AuthenticateV5.2" resourcePath="/REST/AUDIUS_AuthorizationServiceV5_2/Authenticate" methodName="Authenticate" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetHonkFlashStatus" mediaType="application/json" postQueryString="false" id="891992a7-f96c-4315-828f-c793b737cfed"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="Bearer ${#Project#SessionToken}"/>
+  &lt;con:entry key="api_key" value="${#Project#api_key}"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndPoint}</con:endpoint><con:request>{
+"context": {
+"SourceName": "WEB",
+"TransactionId": "Vishnu7836387633",
+"Timestamp": "2014-09-19T22:14:02.001Z",
+"Organization": "${#Project#Organization}",
+"Region": "US",
+"ApplicationName": "CWP"
+},
+"Data": {
+"HonkFlashEventTransactionId": "Vishnu83463763",
+"serviceOperationCode": "HonkAndFlash",
+"OEM": "Audi"
+}
+}</con:request><con:originalUri>https://api-test.vtitel.net/REST/HonkAndFlashServiceV5_0/GetHonkFlashStatus</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
